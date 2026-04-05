@@ -1,135 +1,171 @@
 import React, { useState } from 'react';
-import { CreditCard, Shield, Zap, CheckCircle, ChevronRight, Globe } from 'lucide-react';
+import { CreditCard, Shield, Zap, CheckCircle, ChevronRight, Globe, TrendingUp, Users } from 'lucide-react';
 
-const LandingPage = () => {
+const AquilaLanding = () => {
   const [email, setEmail] = useState('');
 
   const tiers = [
-    { name: 'Bronze', range: '$100 - $1K', fee: '2.5%', color: 'border-amber-700' },
-    { name: 'Silver', range: '$1K - $10K', fee: '2.0%', color: 'border-slate-400' },
-    { name: 'Gold', range: '$10K - $50K', fee: '1.5%', color: 'border-yellow-500' },
-    { name: 'Platinum', range: '$50K - $500K', fee: '1.0%', color: 'border-cyan-400' },
-    { name: 'Diamond', range: '$500K - $1M', fee: '0.5%', color: 'border-blue-200' },
-    { name: 'Elite', range: '$1M+', fee: '0%', color: 'border-white shadow-[0_0_15px_rgba(255,255,255,0.5)]', special: 'Black Eagle' },
+    { name: 'Bronze', range: '$100 - $1,000', fee: '2.5%', status: 'Entry-level Retail' },
+    { name: 'Silver', range: '$1,000 - $10,000', fee: '2.0%', status: 'Standard User' },
+    { name: 'Gold', range: '$10,000 - $50,000', fee: '1.5%', status: 'Advanced Trader' },
+    { name: 'Platinum', range: '$50,000 - $500,000', fee: '1.0%', status: 'Professional / HNW' },
+    { name: 'Diamond', range: '$500,000 - $1M', fee: '0.5%', status: 'Institutional / Whale' },
+    { name: 'Elite', range: '$1,000,000+', fee: '0%', status: 'Black Eagle Brand', isElite: true },
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white font-sans selection:bg-white selection:text-black">
-      {/* Navigation */}
-      <nav className="flex justify-between items-center p-6 max-w-7xl mx-auto border-b border-white/10">
-        <div className="flex items-center gap-2">
-          <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center">
-            <span className="text-black font-black text-xl italic">O</span>
+    <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-[#d4af37] selection:text-black">
+      {/* Header / Nav */}
+      <nav className="flex justify-between items-center p-8 max-w-7xl mx-auto">
+        <div className="flex items-center gap-3">
+          <div className="relative">
+             <div className="w-12 h-12 border-2 border-[#d4af37] rotate-45 flex items-center justify-center">
+                <span className="rotate-[-45deg] text-[#d4af37] font-serif text-2xl font-bold">A</span>
+             </div>
           </div>
-          <span className="text-2xl font-bold tracking-tighter">OMNICARD</span>
+          <div className="flex flex-col">
+            <span className="text-2xl font-black tracking-[0.2em] leading-none">AQUILA</span>
+            <span className="text-[10px] tracking-[0.5em] text-[#d4af37] font-light">FINANCE</span>
+          </div>
         </div>
-        <div className="hidden md:flex gap-8 text-sm font-medium text-gray-400 uppercase tracking-widest">
-          <a href="#tiers" className="hover:text-white transition-colors">Tiers</a>
-          <a href="#features" className="hover:text-white transition-colors">Benefits</a>
-          <a href="#about" className="hover:text-white transition-colors">Global</a>
+        <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em] font-medium text-gray-500">
+          <a href="#tiers" className="hover:text-[#d4af37] transition-colors">Pricing</a>
+          <a href="#b2b" className="hover:text-[#d4af37] transition-colors">Partnerships</a>
+          <a href="#security" className="hover:text-[#d4af37] transition-colors">Institutional</a>
         </div>
-        <button className="bg-white text-black px-6 py-2 rounded-full font-bold hover:bg-gray-200 transition-all">
-          GET THE CARD
+        <button className="border border-[#d4af37] text-[#d4af37] px-8 py-2 text-[10px] tracking-widest font-bold hover:bg-[#d4af37] hover:text-black transition-all">
+          CLIENT ACCESS
         </button>
       </nav>
 
       {/* Hero Section */}
-      <header className="relative pt-20 pb-32 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-white/5 blur-[120px] rounded-full -z-10"></div>
-        <div className="max-w-7xl mx-auto px-6 text-center">
-          <h1 className="text-6xl md:text-8xl font-black tracking-tighter mb-6 bg-gradient-to-b from-white to-gray-500 bg-clip-text text-transparent">
-            SPEND CRYPTO.<br />EARN REALITY.
+      <header className="pt-24 pb-32 max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <div className="space-y-8">
+          <div className="inline-block border-l-2 border-[#d4af37] pl-4">
+            <span className="text-[#d4af37] text-xs tracking-[0.4em] uppercase">The New Standard</span>
+          </div>
+          <h1 className="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter">
+            ELITE <br/>LIQUIDITY. <br/><span className="text-gray-600">ZERO FRICTION.</span>
           </h1>
-          <p className="text-xl text-gray-400 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
-            The world's first crypto-debit gateway with <span className="text-white font-bold">0% deposit fees</span> and hidden instant cashback. No friction. No limits. Just power.
+          <p className="text-gray-400 text-lg max-w-md leading-relaxed font-light">
+            Bridging high-volume digital assets with real-world spending power. Specialized for institutional-grade users and resellers.
           </p>
-          <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
+          <div className="flex gap-4">
             <input 
               type="email" 
-              placeholder="Enter your email" 
-              className="bg-white/10 border border-white/20 px-6 py-4 rounded-full w-full max-w-sm focus:outline-none focus:border-white transition-all"
+              placeholder="Private Invitation Code" 
+              className="bg-transparent border-b border-gray-800 py-3 w-64 focus:outline-none focus:border-[#d4af37] transition-colors text-sm"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
             />
-            <button className="bg-white text-black px-10 py-4 rounded-full font-black flex items-center gap-2 hover:scale-105 transition-transform">
-              JOIN WAITLIST <ChevronRight size={20} />
+            <button className="text-sm font-bold flex items-center gap-2 group">
+              REQUEST ACCESS <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform text-[#d4af37]" />
             </button>
           </div>
         </div>
+        
+        {/* Card Visual */}
+        <div className="relative flex justify-center">
+          <div className="w-full max-w-md aspect-[1.58/1] bg-gradient-to-br from-zinc-900 to-black rounded-xl border border-zinc-800 p-8 shadow-2xl relative overflow-hidden">
+            <div className="absolute top-0 right-0 p-8">
+               <div className="text-[#d4af37] opacity-40">
+                  <Globe size={40} strokeWidth={1} />
+               </div>
+            </div>
+            <div className="flex flex-col h-full justify-between">
+              <span className="text-xl font-light tracking-[0.4em]">AQUILA</span>
+              <div className="space-y-4">
+                <div className="w-12 h-8 bg-gradient-to-r from-[#d4af37] to-[#f4d06f] rounded-sm opacity-80"></div>
+                <p className="text-xl font-mono tracking-widest text-zinc-400">**** **** **** 0001</p>
+                <div className="flex justify-between items-end">
+                  <span className="text-[10px] tracking-widest text-zinc-500 uppercase font-bold italic">BLACK EAGLE</span>
+                  <span className="text-lg font-serif italic text-zinc-600">VISA</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          {/* Subtle Glow */}
+          <div className="absolute -inset-4 bg-[#d4af37]/5 blur-3xl -z-10"></div>
+        </div>
       </header>
 
-      {/* Card Visual Placeholder */}
-      <section className="max-w-4xl mx-auto px-6 mb-32">
-        <div className="aspect-[1.58/1] bg-gradient-to-br from-zinc-800 to-black rounded-3xl border border-white/20 shadow-2xl flex flex-col justify-between p-10 relative overflow-hidden group">
-          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_0%,rgba(255,255,255,0.1),transparent)] group-hover:opacity-100 opacity-0 transition-opacity"></div>
-          <div className="flex justify-between items-start">
-            <span className="text-3xl font-black italic">OMNICARD</span>
-            <div className="w-12 h-12 bg-white/10 rounded-lg backdrop-blur-md border border-white/20"></div>
-          </div>
-          <div className="flex justify-between items-end">
-            <div className="space-y-1">
-              <p className="text-xs text-gray-500 uppercase tracking-widest">Black Eagle Elite</p>
-              <p className="text-xl font-mono tracking-[0.2em]">**** **** **** 8888</p>
-            </div>
-            <div className="text-right">
-              <span className="text-sm font-bold opacity-50">VISA</span>
-            </div>
-          </div>
+      {/* Pricing Table Section - Exact Layout from Image */}
+      <section id="tiers" className="max-w-7xl mx-auto px-8 py-24 border-t border-zinc-900">
+        <div className="mb-16">
+          <h2 className="text-[#d4af37] text-xs tracking-[0.5em] uppercase mb-4">Pricing & Limits</h2>
+          <h3 className="text-4xl font-bold italic">THE B2C LADDER MODEL</h3>
+        </div>
+
+        <div className="w-full overflow-x-auto">
+          <table className="w-full text-left">
+            <thead>
+              <tr className="border-b border-[#d4af37]/30 text-[10px] tracking-[0.2em] text-gray-500 uppercase">
+                <th className="pb-6">Tier</th>
+                <th className="pb-6">Deposit / Holding</th>
+                <th className="pb-6">Top-up Fee</th>
+                <th className="pb-6">Status / Branding</th>
+              </tr>
+            </thead>
+            <tbody className="text-sm">
+              {tiers.map((tier, idx) => (
+                <tr key={idx} className={`border-b border-zinc-900 group hover:bg-zinc-950 transition-colors ${tier.isElite ? 'bg-[#d4af37]/5' : ''}`}>
+                  <td className={`py-8 font-bold ${tier.isElite ? 'text-[#d4af37]' : ''}`}>
+                    {tier.isElite && <span className="mr-2">🦅</span>}
+                    {tier.name}
+                  </td>
+                  <td className="py-8 font-mono text-gray-300">{tier.range}</td>
+                  <td className={`py-8 font-black ${tier.isElite ? 'text-[#d4af37]' : ''}`}>{tier.fee}</td>
+                  <td className={`py-8 italic font-light ${tier.isElite ? 'text-[#d4af37]' : 'text-gray-500'}`}>{tier.status}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       </section>
 
-      {/* Tiers Section */}
-      <section id="tiers" className="max-w-7xl mx-auto px-6 py-20 border-t border-white/10">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold mb-4">Select Your Tier</h2>
-          <p className="text-gray-400">The more you hold, the less you pay.</p>
-        </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {tiers.map((tier) => (
-            <div key={tier.name} className={`p-8 rounded-2xl border bg-zinc-950/50 hover:bg-zinc-900 transition-colors ${tier.color}`}>
-              <h3 className="text-2xl font-bold mb-1">{tier.name} {tier.special && <span className="text-xs uppercase bg-white text-black px-2 py-0.5 ml-2 rounded">Elite</span>}</h3>
-              <p className="text-gray-500 text-sm mb-6">{tier.range}</p>
-              <div className="flex items-baseline gap-1">
-                <span className="text-4xl font-black">{tier.fee}</span>
-                <span className="text-gray-400 text-sm italic">Top-up Fee</span>
+      {/* B2B / Reseller Section */}
+      <section id="b2b" className="max-w-7xl mx-auto px-8 py-24 border-t border-zinc-900">
+        <div className="grid md:grid-cols-2 gap-20 items-center">
+          <div className="space-y-6 text-zinc-500">
+            <h4 className="text-white text-3xl font-bold">Institutional Reseller Program</h4>
+            <p className="font-light leading-relaxed">
+              Scale your existing platform with our white-label infrastructure. Minimum commitment of <span className="text-white">$500,000</span> monthly volume required.
+            </p>
+            <div className="grid grid-cols-2 gap-8 pt-6">
+              <div>
+                <span className="block text-white font-bold text-2xl">0.2%</span>
+                <span className="text-[10px] tracking-widest uppercase">Wholesale Fees</span>
               </div>
-              <ul className="mt-8 space-y-3">
-                <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle size={16} className="text-green-500" /> Instant Settlement</li>
-                <li className="flex items-center gap-2 text-sm text-gray-300"><CheckCircle size={16} className="text-green-500" /> Global Acceptance</li>
-                {tier.fee === '0%' && <li className="flex items-center gap-2 text-sm text-white font-bold"><CheckCircle size={16} className="text-white" /> 24/7 Concierge</li>}
-              </ul>
+              <div>
+                <span className="block text-white font-bold text-2xl">24h</span>
+                <span className="text-[10px] tracking-widest uppercase">Integration Time</span>
+              </div>
             </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Features */}
-      <section id="features" className="bg-zinc-950 py-32">
-        <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
-          <div className="space-y-4">
-            <Zap className="text-white w-12 h-12" />
-            <h4 className="text-2xl font-bold">Infinite Liquidity</h4>
-            <p className="text-gray-400 font-light">Deposit USDT, USDC, or DAI. Spend in 180+ countries instantly. No waiting for bank transfers.</p>
           </div>
-          <div className="space-y-4">
-            <Shield className="text-white w-12 h-12" />
-            <h4 className="text-2xl font-bold">Bank-Grade Security</h4>
-            <p className="text-gray-400 font-light">Your assets are protected by cold-storage and multi-sig technology. We never lend your money.</p>
-          </div>
-          <div className="space-y-4">
-            <Globe className="text-white w-12 h-12" />
-            <h4 className="text-2xl font-bold">Real-World Arbitrage</h4>
-            <p className="text-gray-400 font-light">Our backend leverages merchant cashback networks to bring you the lowest fees in the entire crypto industry.</p>
+          <div className="bg-zinc-950 p-10 border border-zinc-800 rounded-lg space-y-6">
+             <TrendingUp className="text-[#d4af37]" size={32} />
+             <h5 className="text-xl font-bold">Maximum Arbitrage</h5>
+             <p className="text-sm text-zinc-400 font-light leading-relaxed">
+               Access our global merchant cashback network and generate yield from unspent AUM. Contact our institutional desk for wholesale pricing.
+             </p>
+             <button className="w-full py-4 border border-zinc-700 text-xs tracking-widest uppercase font-black hover:border-[#d4af37] hover:text-[#d4af37] transition-all">
+                Partner with Aquila
+             </button>
           </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="p-10 border-t border-white/10 text-center text-gray-600 text-sm uppercase tracking-widest">
-        &copy; 2026 OMNI INFRASTRUCTURE INC. All Rights Reserved.
+      <footer className="max-w-7xl mx-auto px-8 py-16 flex justify-between items-center border-t border-zinc-900 text-[8px] tracking-[0.5em] text-zinc-600">
+        <span>© 2026 AQUILA FINANCE GLOBAL INC.</span>
+        <div className="flex gap-8">
+          <span>TERMS</span>
+          <span>PRIVACY</span>
+          <span>ANTI-MONEY LAUNDERING</span>
+        </div>
       </footer>
     </div>
   );
 };
 
-export default LandingPage;
+export default AquilaLanding;
