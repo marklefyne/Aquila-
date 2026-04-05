@@ -2,113 +2,140 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AQuila Finance | Status.</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; overflow-x: hidden; }
-        .gold-text { color: #d4af37; }
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; scroll-behavior: smooth; }
         .gold-border { border-color: #d4af37; }
+        .gold-text { color: #d4af37; }
         .gold-bg { background-color: #d4af37; }
         
-        /* Shimmer Animation */
-        .card-shimmer, .elite-row-shimmer { position: relative; overflow: hidden; }
-        .card-shimmer::after, .elite-row-shimmer::after {
+        /* Shimmer Animation for card & elite row */
+        .card-shimmer, .elite-shimmer { position: relative; overflow: hidden; }
+        .card-shimmer::after, .elite-shimmer::after {
             content: ''; position: absolute; top: -50%; left: -50%; width: 200%; height: 200%;
             background: linear-gradient(45deg, transparent 45%, rgba(212,175,55,0.1) 50%, transparent 55%);
             animation: move-shimmer 6s infinite;
         }
         @keyframes move-shimmer { 0% { transform: translateX(-30%); } 100% { transform: translateX(30%); } }
-
-        /* Elegant Title Underline */
-        .title-underline { position: relative; display: inline-block; padding-bottom: 8px; }
-        .title-underline::after { content: ''; position: absolute; bottom: 0; left: 0; width: 40px; height: 1px; background: #d4af37; }
     </style>
 </head>
 <body class="selection:bg-[#d4af37] selection:text-black">
 
-    <nav class="flex justify-between items-center p-6 md:p-8 max-w-7xl mx-auto">
-        <div class="flex flex-col">
-            <span class="text-xl md:text-2xl font-black tracking-[0.2em] leading-none">AQUILA</span>
-            <span class="text-[9px] tracking-[0.5em] gold-text font-light uppercase">Finance</span>
+    <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto border-b border-zinc-900">
+        <div class="flex items-center gap-3">
+            <div class="flex flex-col">
+                <span class="text-2xl font-black tracking-[0.2em] leading-none">AQUILA</span>
+                <span class="text-[10px] tracking-[0.5em] gold-text font-light uppercase">Finance</span>
+            </div>
         </div>
-        <button class="border gold-border gold-text px-5 py-2 text-[9px] tracking-widest font-bold uppercase hover:bg-[#d4af37] hover:text-black transition-all">Portal</button>
+        <button class="border gold-border gold-text px-8 py-2 text-[10px] tracking-widest font-bold hover:bg-[#d4af37] hover:text-black transition-all uppercase">
+            Client Portal
+        </button>
     </nav>
 
-    <header class="pt-20 pb-32 max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
-        <div class="space-y-8">
+    <header class="pt-32 pb-40 max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-20 items-center">
+        <div class="space-y-10">
             <div class="inline-block border-l-2 gold-border pl-4">
-                <span class="gold-text text-[10px] tracking-[0.4em] uppercase">Private Wealth Gateway</span>
+                <span class="gold-text text-xs tracking-[0.4em] uppercase">Private Wealth Gateway</span>
             </div>
-            <h1 class="text-6xl md:text-8xl font-bold leading-[0.85] tracking-tighter italic uppercase">
+            <h1 class="text-7xl md:text-9xl font-bold leading-[0.85] tracking-tighter italic uppercase">
                 AQUILA <br>ELITE. <br><span class="text-zinc-800 uppercase not-italic">Status.</span>
             </h1>
+            <p class="text-gray-500 text-xl font-light">The premier liquidity engine for institutional resellers and high-volume sovereign clients.</p>
         </div>
         
-        <div class="w-full max-w-md aspect-[1.58/1] card-shimmer rounded-xl border border-zinc-800 p-8 shadow-2xl transition-transform duration-700 hover:scale-105 mx-auto lg:mx-0">
+        <div class="w-full max-w-md aspect-[1.58/1] card-shimmer rounded-2xl border border-zinc-800 p-10 shadow-2xl relative transition-transform duration-700 hover:scale-105">
             <div class="flex justify-between items-start">
-                <span class="text-xl font-light tracking-[0.4em] gold-text italic">AQUILA</span>
-                <div class="w-6 h-6 gold-text opacity-20"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L10.5 5.5L8 4L9.5 7.5L7 7L10 10L9 13L12 11.5L15 13L14 10L17 7L14.5 7.5L16 4L13.5 5.5L12 2Z"/></svg></div>
+                <span class="text-2xl font-light tracking-[0.4em] gold-text italic">AQUILA</span>
+                <div class="w-8 h-8 gold-text opacity-20"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L10.5 5.5L8 4L9.5 7.5L7 7L10 10L9 13L12 11.5L15 13L14 10L17 7L14.5 7.5L16 4L13.5 5.5L12 2Z"/></svg></div>
             </div>
-            <div class="mt-16">
-                <p class="text-xl font-mono tracking-[0.2em] text-zinc-600">**** **** **** 8888</p>
-                <div class="mt-6">
-                    <span class="text-sm font-bold text-white tracking-wide block uppercase">Mark Lefyne</span>
-                    <span class="text-[8px] tracking-[0.3em] gold-text font-black uppercase opacity-80">Black Eagle Member</span>
+            <div class="mt-20">
+                <p class="text-2xl font-mono tracking-[0.3em] text-zinc-600">**** **** **** 8888</p>
+                <div class="flex justify-between items-end mt-6">
+                    <div>
+                        <span class="text-sm font-bold text-white tracking-wide block uppercase">Mark Lefyne</span>
+                        <span class="text-[8px] tracking-[0.3em] gold-text font-black uppercase">Black Eagle Member</span>
+                    </div>
+                    <span class="text-2xl font-serif italic text-zinc-700 uppercase">Visa</span>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-zinc-900">
-        <h2 class="title-underline text-[11px] tracking-[0.6em] gold-text uppercase mb-12 font-black">Revenue Infrastructure</h2>
+    <section class="max-w-7xl mx-auto px-8 py-32 border-t border-zinc-900">
+        <h2 class="text-[10px] tracking-[0.8em] gold-text uppercase mb-16 font-bold">Revenue Infrastructure</h2>
         <div class="w-full">
-            <div class="grid grid-cols-4 text-[9px] tracking-[0.2em] text-zinc-600 uppercase border-b border-zinc-900 pb-6 mb-6 font-bold">
-                <div class="px-2">Grade</div>
-                <div class="px-2">Monthly Vol</div>
-                <div class="px-2">Fee</div>
-                <div class="px-2 text-right">Status</div>
-            </div>
-            
-            <div class="divide-y divide-zinc-900">
-                <div class="grid grid-cols-4 py-8 items-center">
-                    <div class="px-2 font-bold text-zinc-400 text-sm">Bronze</div>
-                    <div class="px-2 font-mono text-zinc-300 text-xs">$100-$1k</div>
-                    <div class="px-2 font-black text-xl italic text-white">2.5%</div>
-                    <div class="px-2 text-right italic text-zinc-700 text-[9px] uppercase">Retail</div>
-                </div>
-                <div class="grid grid-cols-4 py-8 items-center">
-                    <div class="px-2 font-bold text-zinc-200 text-sm">Platinum</div>
-                    <div class="px-2 font-mono text-zinc-300 text-xs">$50k-$500k</div>
-                    <div class="px-2 font-black text-xl italic text-white">1.0%</div>
-                    <div class="px-2 text-right italic text-zinc-700 text-[9px] uppercase">HNW</div>
-                </div>
-                <div class="grid grid-cols-4 py-10 items-center elite-row-shimmer bg-zinc-950/50 rounded-lg">
-                    <div class="px-2 font-black gold-text text-sm italic uppercase tracking-widest">Aquila Elite</div>
-                    <div class="px-2 font-mono gold-text text-sm">$1,000,000+</div>
-                    <div class="px-2 font-black gold-text text-4xl italic">0%</div>
-                    <div class="px-2 text-right gold-text font-black tracking-[0.1em] text-[9px] uppercase">Black Eagle</div>
-                </div>
-            </div>
+            <table class="w-full text-left">
+                <thead>
+                    <tr class="text-[10px] tracking-[0.3em] text-zinc-600 uppercase border-b border-zinc-900">
+                        <th class="pb-10 px-4">Tier</th>
+                        <th class="pb-10 px-4">Monthly Volume</th>
+                        <th class="pb-10 px-4">Top-up Fee</th>
+                        <th class="pb-10 px-4 text-right">Branding</th>
+                    </tr>
+                </thead>
+                <tbody class="divide-y divide-zinc-900">
+                    <tr>
+                        <td class="py-12 px-4 font-bold text-zinc-400">Bronze</td>
+                        <td class="py-12 px-4 text-2xl font-bold tracking-tighter text-zinc-200">$100 — $1k</td>
+                        <td class="py-12 px-4 text-4xl font-black text-white italic">2.5%</td>
+                        <td class="py-12 px-4 text-right italic text-zinc-700 text-[10px] uppercase">Retail</td>
+                    </tr>
+                    <tr>
+                        <td class="py-12 px-4 font-bold text-zinc-400">Silver</td>
+                        <td class="py-12 px-4 text-2xl font-bold tracking-tighter text-zinc-200">$1k — $10k</td>
+                        <td class="py-12 px-4 text-4xl font-black text-white italic">2.0%</td>
+                        <td class="py-12 px-4 text-right italic text-zinc-700 text-[10px] uppercase">Standard</td>
+                    </tr>
+                    <tr>
+                        <td class="py-12 px-4 font-bold text-zinc-400">Gold</td>
+                        <td class="py-12 px-4 text-2xl font-bold tracking-tighter text-zinc-200">$10k — $50k</td>
+                        <td class="py-12 px-4 text-4xl font-black text-white italic">1.5%</td>
+                        <td class="py-12 px-4 text-right italic text-zinc-700 text-[10px] uppercase">Advanced</td>
+                    </tr>
+                    <tr>
+                        <td class="py-12 px-4 font-bold text-zinc-300">Platinum</td>
+                        <td class="py-12 px-4 text-2xl font-bold tracking-tighter text-zinc-200">$50k — $500k</td>
+                        <td class="py-12 px-4 text-4xl font-black text-white italic">1.0%</td>
+                        <td class="py-12 px-4 text-right italic text-zinc-600 uppercase text-[10px]">Professional</td>
+                    </tr>
+                    <tr>
+                        <td class="py-12 px-4 font-bold text-zinc-300">Diamond</td>
+                        <td class="py-12 px-4 text-2xl font-bold tracking-tighter text-zinc-200">$500k — $1M</td>
+                        <td class="py-12 px-4 text-4xl font-black text-white italic">0.5%</td>
+                        <td class="py-12 px-4 text-right italic text-zinc-600 uppercase text-[10px]">Institutional</td>
+                    </tr>
+                    <tr class="elite-shimmer bg-zinc-950/30">
+                        <td class="py-16 px-4 text-xl font-black gold-text italic uppercase">Eagle Elite</td>
+                        <td class="py-16 px-4 text-3xl font-black gold-text tracking-tighter">$1M+</td>
+                        <td class="py-16 px-4 text-6xl font-black gold-text italic">0%</td>
+                        <td class="py-16 px-4 text-right gold-text font-bold tracking-[0.2em] uppercase text-[11px]">Black Eagle</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
     </section>
 
-    <section class="max-w-7xl mx-auto px-6 py-24 border-t border-zinc-900">
-        <div class="grid lg:grid-cols-2 gap-16 items-center">
-            <div class="space-y-6">
-                <h3 class="text-4xl font-black italic uppercase tracking-tighter">Institutional <br>Reseller Program</h3>
-                <p class="text-zinc-500 font-light max-w-sm">Scale your platform with our white-label infrastructure. You capture the entire front-end revenue.</p>
-                <div class="flex gap-10 pt-4">
-                    <div><span class="block gold-text font-black text-3xl">0%</span><span class="text-[8px] tracking-widest text-zinc-700 uppercase font-bold">Wholesale Fee</span></div>
-                    <div><span class="block text-white font-black text-3xl">24H</span><span class="text-[8px] tracking-widest text-zinc-700 uppercase font-bold">Activation</span></div>
+    <section class="max-w-7xl mx-auto px-8 py-32 border-t border-zinc-900 bg-[radial-gradient(circle_at_top_right,rgba(212,175,55,0.02),transparent)]">
+        <div class="grid lg:grid-cols-2 gap-24 items-center">
+            <div class="space-y-8">
+                <h4 class="text-white text-5xl font-black uppercase tracking-tighter italic">Institutional <br>Reseller Program</h4>
+                <div class="flex gap-16 border-t border-zinc-900 pt-10">
+                    <div><span class="block gold-text font-black text-4xl italic">0%</span><span class="text-[10px] tracking-widest text-zinc-700 uppercase font-bold">Wholesale Fee</span></div>
+                    <div><span class="block text-white font-black text-4xl italic">24H</span><span class="text-[10px] tracking-widest text-zinc-700 uppercase font-bold">Node Activation</span></div>
                 </div>
             </div>
-            <div class="bg-zinc-950 p-10 border border-zinc-800 rounded-xl relative shadow-2xl">
-                <div class="absolute top-0 left-0 w-1 h-full gold-bg opacity-30"></div>
-                <h4 class="text-lg font-bold gold-text uppercase italic tracking-widest mb-4">Scale Globally</h4>
-                <p class="text-zinc-400 text-sm font-light mb-8">Leverage our 2% merchant cashback backend. We provide the infra; you keep the brand loyalty.</p>
-                <button class="w-full py-4 border gold-border gold-text text-[9px] tracking-[0.4em] uppercase font-black hover:bg-[#d4af37] hover:text-black transition-all">Initiate Partnership</button>
+            <div class="bg-zinc-950 p-12 border border-zinc-800 rounded-2xl space-y-8 shadow-2xl relative">
+                <div class="absolute top-0 left-0 w-1 h-full gold-bg opacity-20"></div>
+                <h5 class="text-2xl font-bold gold-text uppercase italic tracking-[0.2em]">Scale Globally</h5>
+                <p class="text-zinc-400 font-light leading-relaxed">Zero-cost infrastructure for partners with high-volume settlements. You capture 100% of your margins.</p>
+                <div class="p-4 bg-zinc-900/50 border border-zinc-800 rounded text-[10px] tracking-widest text-zinc-500 uppercase font-bold">
+                    Requirement: Minimum $2,000,000 monthly aggregate spend.
+                </div>
+                <button class="w-full py-5 border gold-border gold-text text-[10px] tracking-[0.5em] uppercase font-black hover:bg-[#d4af37] hover:text-black transition-all">Initiate Partnership</button>
             </div>
         </div>
     </section>
