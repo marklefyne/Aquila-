@@ -1,171 +1,166 @@
-import React, { useState } from 'react';
-import { CreditCard, Shield, Zap, CheckCircle, ChevronRight, Globe, TrendingUp, Users } from 'lucide-react';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQuila Finance | Elite Liquidity</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #0a0a0a; color: white; }
+        .gold-border { border-color: #d4af37; }
+        .gold-text { color: #d4af37; }
+        .gold-bg { background-color: #d4af37; }
+        .elite-row { background: rgba(212, 175, 55, 0.05); }
+    </style>
+</head>
+<body class="selection:bg-[#d4af37] selection:text-black">
 
-const AquilaLanding = () => {
-  const [email, setEmail] = useState('');
-
-  const tiers = [
-    { name: 'Bronze', range: '$100 - $1,000', fee: '2.5%', status: 'Entry-level Retail' },
-    { name: 'Silver', range: '$1,000 - $10,000', fee: '2.0%', status: 'Standard User' },
-    { name: 'Gold', range: '$10,000 - $50,000', fee: '1.5%', status: 'Advanced Trader' },
-    { name: 'Platinum', range: '$50,000 - $500,000', fee: '1.0%', status: 'Professional / HNW' },
-    { name: 'Diamond', range: '$500,000 - $1M', fee: '0.5%', status: 'Institutional / Whale' },
-    { name: 'Elite', range: '$1,000,000+', fee: '0%', status: 'Black Eagle Brand', isElite: true },
-  ];
-
-  return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white font-sans selection:bg-[#d4af37] selection:text-black">
-      {/* Header / Nav */}
-      <nav className="flex justify-between items-center p-8 max-w-7xl mx-auto">
-        <div className="flex items-center gap-3">
-          <div className="relative">
-             <div className="w-12 h-12 border-2 border-[#d4af37] rotate-45 flex items-center justify-center">
-                <span className="rotate-[-45deg] text-[#d4af37] font-serif text-2xl font-bold">A</span>
-             </div>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-2xl font-black tracking-[0.2em] leading-none">AQUILA</span>
-            <span className="text-[10px] tracking-[0.5em] text-[#d4af37] font-light">FINANCE</span>
-          </div>
+    <nav class="flex justify-between items-center p-8 max-w-7xl mx-auto">
+        <div class="flex items-center gap-3">
+            <div class="w-12 h-12 border-2 gold-border rotate-45 flex items-center justify-center">
+                <span class="rotate-[-45deg] gold-text text-2xl font-bold">A</span>
+            </div>
+            <div class="flex flex-col">
+                <span class="text-2xl font-black tracking-[0.2em] leading-none">AQUILA</span>
+                <span class="text-[10px] tracking-[0.5em] gold-text font-light">FINANCE</span>
+            </div>
         </div>
-        <div className="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em] font-medium text-gray-500">
-          <a href="#tiers" className="hover:text-[#d4af37] transition-colors">Pricing</a>
-          <a href="#b2b" className="hover:text-[#d4af37] transition-colors">Partnerships</a>
-          <a href="#security" className="hover:text-[#d4af37] transition-colors">Institutional</a>
+        <div class="hidden md:flex gap-10 text-[10px] uppercase tracking-[0.3em] font-medium text-gray-500">
+            <a href="#tiers" class="hover:gold-text transition-colors">Pricing</a>
+            <a href="#b2b" class="hover:gold-text transition-colors">Partnerships</a>
         </div>
-        <button className="border border-[#d4af37] text-[#d4af37] px-8 py-2 text-[10px] tracking-widest font-bold hover:bg-[#d4af37] hover:text-black transition-all">
-          CLIENT ACCESS
+        <button class="border gold-border gold-text px-8 py-2 text-[10px] tracking-widest font-bold hover:gold-bg hover:text-black transition-all uppercase">
+            Client Access
         </button>
-      </nav>
+    </nav>
 
-      {/* Hero Section */}
-      <header className="pt-24 pb-32 max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
-        <div className="space-y-8">
-          <div className="inline-block border-l-2 border-[#d4af37] pl-4">
-            <span className="text-[#d4af37] text-xs tracking-[0.4em] uppercase">The New Standard</span>
-          </div>
-          <h1 className="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter">
-            ELITE <br/>LIQUIDITY. <br/><span className="text-gray-600">ZERO FRICTION.</span>
-          </h1>
-          <p className="text-gray-400 text-lg max-w-md leading-relaxed font-light">
-            Bridging high-volume digital assets with real-world spending power. Specialized for institutional-grade users and resellers.
-          </p>
-          <div className="flex gap-4">
-            <input 
-              type="email" 
-              placeholder="Private Invitation Code" 
-              className="bg-transparent border-b border-gray-800 py-3 w-64 focus:outline-none focus:border-[#d4af37] transition-colors text-sm"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <button className="text-sm font-bold flex items-center gap-2 group">
-              REQUEST ACCESS <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform text-[#d4af37]" />
-            </button>
-          </div>
+    <header class="pt-24 pb-32 max-w-7xl mx-auto px-8 grid lg:grid-cols-2 gap-16 items-center">
+        <div class="space-y-8">
+            <div class="inline-block border-l-2 gold-border pl-4">
+                <span class="gold-text text-xs tracking-[0.4em] uppercase">The New Standard</span>
+            </div>
+            <h1 class="text-6xl md:text-8xl font-bold leading-[0.9] tracking-tighter">
+                ELITE <br>LIQUIDITY. <br><span class="text-gray-600">ZERO FRICTION.</span>
+            </h1>
+            <p class="text-gray-400 text-lg max-w-md leading-relaxed font-light">
+                Bridging high-volume digital assets with real-world spending power. Specialized for institutional-grade users and resellers.
+            </p>
+            <div class="flex gap-4">
+                <input type="text" placeholder="Private Invitation Code" class="bg-transparent border-b border-gray-800 py-3 w-64 focus:outline-none focus:border-[#d4af37] transition-colors text-sm">
+                <button class="text-sm font-bold flex items-center gap-2 group uppercase tracking-widest">
+                    Request Access <span>→</span>
+                </button>
+            </div>
         </div>
         
-        {/* Card Visual */}
-        <div className="relative flex justify-center">
-          <div className="w-full max-w-md aspect-[1.58/1] bg-gradient-to-br from-zinc-900 to-black rounded-xl border border-zinc-800 p-8 shadow-2xl relative overflow-hidden">
-            <div className="absolute top-0 right-0 p-8">
-               <div className="text-[#d4af37] opacity-40">
-                  <Globe size={40} strokeWidth={1} />
-               </div>
-            </div>
-            <div className="flex flex-col h-full justify-between">
-              <span className="text-xl font-light tracking-[0.4em]">AQUILA</span>
-              <div className="space-y-4">
-                <div className="w-12 h-8 bg-gradient-to-r from-[#d4af37] to-[#f4d06f] rounded-sm opacity-80"></div>
-                <p className="text-xl font-mono tracking-widest text-zinc-400">**** **** **** 0001</p>
-                <div className="flex justify-between items-end">
-                  <span className="text-[10px] tracking-widest text-zinc-500 uppercase font-bold italic">BLACK EAGLE</span>
-                  <span className="text-lg font-serif italic text-zinc-600">VISA</span>
+        <div class="relative flex justify-center">
+            <div class="w-full max-w-md aspect-[1.58/1] bg-gradient-to-br from-zinc-900 to-black rounded-xl border border-zinc-800 p-8 shadow-2xl relative overflow-hidden">
+                <div class="flex flex-col h-full justify-between">
+                    <span class="text-xl font-light tracking-[0.4em]">AQUILA</span>
+                    <div class="space-y-4">
+                        <div class="w-12 h-8 bg-gradient-to-r from-[#d4af37] to-[#f4d06f] rounded-sm opacity-80"></div>
+                        <p class="text-xl font-mono tracking-widest text-zinc-400">**** **** **** 0001</p>
+                        <div class="flex justify-between items-end">
+                            <span class="text-[10px] tracking-widest text-zinc-500 uppercase font-bold italic">BLACK EAGLE</span>
+                            <span class="text-lg font-serif italic text-zinc-600">VISA</span>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-          </div>
-          {/* Subtle Glow */}
-          <div className="absolute -inset-4 bg-[#d4af37]/5 blur-3xl -z-10"></div>
         </div>
-      </header>
+    </header>
 
-      {/* Pricing Table Section - Exact Layout from Image */}
-      <section id="tiers" className="max-w-7xl mx-auto px-8 py-24 border-t border-zinc-900">
-        <div className="mb-16">
-          <h2 className="text-[#d4af37] text-xs tracking-[0.5em] uppercase mb-4">Pricing & Limits</h2>
-          <h3 className="text-4xl font-bold italic">THE B2C LADDER MODEL</h3>
+    <section id="tiers" class="max-w-7xl mx-auto px-8 py-24 border-t border-zinc-900">
+        <div class="mb-16">
+            <h2 class="gold-text text-xs tracking-[0.5em] uppercase mb-4">Pricing & Limits</h2>
+            <h3 class="text-4xl font-bold italic uppercase tracking-tighter">The B2C Ladder Model</h3>
         </div>
 
-        <div className="w-full overflow-x-auto">
-          <table className="w-full text-left">
-            <thead>
-              <tr className="border-b border-[#d4af37]/30 text-[10px] tracking-[0.2em] text-gray-500 uppercase">
-                <th className="pb-6">Tier</th>
-                <th className="pb-6">Deposit / Holding</th>
-                <th className="pb-6">Top-up Fee</th>
-                <th className="pb-6">Status / Branding</th>
-              </tr>
-            </thead>
-            <tbody className="text-sm">
-              {tiers.map((tier, idx) => (
-                <tr key={idx} className={`border-b border-zinc-900 group hover:bg-zinc-950 transition-colors ${tier.isElite ? 'bg-[#d4af37]/5' : ''}`}>
-                  <td className={`py-8 font-bold ${tier.isElite ? 'text-[#d4af37]' : ''}`}>
-                    {tier.isElite && <span className="mr-2">🦅</span>}
-                    {tier.name}
-                  </td>
-                  <td className="py-8 font-mono text-gray-300">{tier.range}</td>
-                  <td className={`py-8 font-black ${tier.isElite ? 'text-[#d4af37]' : ''}`}>{tier.fee}</td>
-                  <td className={`py-8 italic font-light ${tier.isElite ? 'text-[#d4af37]' : 'text-gray-500'}`}>{tier.status}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
+        <div class="w-full overflow-x-auto">
+            <table class="w-full text-left border-collapse">
+                <thead>
+                    <tr class="border-b border-[#d4af37]/30 text-[10px] tracking-[0.2em] text-gray-500 uppercase">
+                        <th class="pb-6 px-4">Tier</th>
+                        <th class="pb-6 px-4">Deposit / Holding</th>
+                        <th class="pb-6 px-4">Top-up Fee</th>
+                        <th class="pb-6 px-4">Status / Branding</th>
+                    </tr>
+                </thead>
+                <tbody class="text-sm">
+                    <tr class="border-b border-zinc-900 hover:bg-zinc-950 transition-colors">
+                        <td class="py-8 px-4 font-bold">Bronze</td>
+                        <td class="py-8 px-4 font-mono text-gray-300">$100 - $1,000</td>
+                        <td class="py-8 px-4 font-black">2.5%</td>
+                        <td class="py-8 px-4 italic font-light text-gray-500">Entry-level Retail</td>
+                    </tr>
+                    <tr class="border-b border-zinc-900 hover:bg-zinc-950 transition-colors">
+                        <td class="py-8 px-4 font-bold">Silver</td>
+                        <td class="py-8 px-4 font-mono text-gray-300">$1,000 - $10,000</td>
+                        <td class="py-8 px-4 font-black">2.0%</td>
+                        <td class="py-8 px-4 italic font-light text-gray-500">Standard User</td>
+                    </tr>
+                    <tr class="border-b border-zinc-900 hover:bg-zinc-950 transition-colors">
+                        <td class="py-8 px-4 font-bold">Gold</td>
+                        <td class="py-8 px-4 font-mono text-gray-300">$10,000 - $50,000</td>
+                        <td class="py-8 px-4 font-black">1.5%</td>
+                        <td class="py-8 px-4 italic font-light text-gray-500">Advanced Trader</td>
+                    </tr>
+                    <tr class="border-b border-zinc-900 hover:bg-zinc-950 transition-colors">
+                        <td class="py-8 px-4 font-bold">Platinum</td>
+                        <td class="py-8 px-4 font-mono text-gray-300">$50,000 - $500,000</td>
+                        <td class="py-8 px-4 font-black">1.0%</td>
+                        <td class="py-8 px-4 italic font-light text-gray-500">Professional / HNW</td>
+                    </tr>
+                    <tr class="border-b border-zinc-900 hover:bg-zinc-950 transition-colors">
+                        <td class="py-8 px-4 font-bold">Diamond</td>
+                        <td class="py-8 px-4 font-mono text-gray-300">$500,000 - $1M</td>
+                        <td class="py-8 px-4 font-black">0.5%</td>
+                        <td class="py-8 px-4 italic font-light text-gray-500">Institutional / Whale</td>
+                    </tr>
+                    <tr class="elite-row border-b border-zinc-900 hover:bg-zinc-900 transition-colors">
+                        <td class="py-8 px-4 font-bold gold-text">🦅 Elite</td>
+                        <td class="py-8 px-4 font-mono gold-text">$1,000,000+</td>
+                        <td class="py-8 px-4 font-black gold-text">0%</td>
+                        <td class="py-8 px-4 italic font-light gold-text">Black Eagle Brand</td>
+                    </tr>
+                </tbody>
+            </table>
         </div>
-      </section>
+    </section>
 
-      {/* B2B / Reseller Section */}
-      <section id="b2b" className="max-w-7xl mx-auto px-8 py-24 border-t border-zinc-900">
-        <div className="grid md:grid-cols-2 gap-20 items-center">
-          <div className="space-y-6 text-zinc-500">
-            <h4 className="text-white text-3xl font-bold">Institutional Reseller Program</h4>
-            <p className="font-light leading-relaxed">
-              Scale your existing platform with our white-label infrastructure. Minimum commitment of <span className="text-white">$500,000</span> monthly volume required.
-            </p>
-            <div className="grid grid-cols-2 gap-8 pt-6">
-              <div>
-                <span className="block text-white font-bold text-2xl">0.2%</span>
-                <span className="text-[10px] tracking-widest uppercase">Wholesale Fees</span>
-              </div>
-              <div>
-                <span className="block text-white font-bold text-2xl">24h</span>
-                <span className="text-[10px] tracking-widest uppercase">Integration Time</span>
-              </div>
+    <section id="b2b" class="max-w-7xl mx-auto px-8 py-24 border-t border-zinc-900">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div class="space-y-6 text-zinc-500">
+                <h4 class="text-white text-3xl font-bold uppercase tracking-tighter">Institutional Reseller Program</h4>
+                <p class="font-light leading-relaxed">Scale your existing platform with our white-label infrastructure. Minimum commitment of <span class="text-white">$500,000</span> monthly volume required.</p>
+                <div class="grid grid-cols-2 gap-8 pt-6">
+                    <div>
+                        <span class="block text-white font-bold text-2xl">0.2%</span>
+                        <span class="text-[10px] tracking-widest uppercase">Wholesale Fees</span>
+                    </div>
+                    <div>
+                        <span class="block text-white font-bold text-2xl">24h</span>
+                        <span class="text-[10px] tracking-widest uppercase">Integration</span>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div className="bg-zinc-950 p-10 border border-zinc-800 rounded-lg space-y-6">
-             <TrendingUp className="text-[#d4af37]" size={32} />
-             <h5 className="text-xl font-bold">Maximum Arbitrage</h5>
-             <p className="text-sm text-zinc-400 font-light leading-relaxed">
-               Access our global merchant cashback network and generate yield from unspent AUM. Contact our institutional desk for wholesale pricing.
-             </p>
-             <button className="w-full py-4 border border-zinc-700 text-xs tracking-widest uppercase font-black hover:border-[#d4af37] hover:text-[#d4af37] transition-all">
-                Partner with Aquila
-             </button>
-          </div>
+            <div class="bg-zinc-900/50 p-10 border border-zinc-800 rounded-lg space-y-6">
+                <h5 class="text-xl font-bold gold-text uppercase tracking-widest">Maximum Arbitrage</h5>
+                <p class="text-sm text-zinc-400 font-light leading-relaxed">Access our global merchant cashback network and generate yield from unspent AUM. Contact our institutional desk for wholesale pricing.</p>
+                <button class="w-full py-4 border border-zinc-700 text-xs tracking-widest uppercase font-black hover:gold-border hover:gold-text transition-all">Partner with Aquila</button>
+            </div>
         </div>
-      </section>
+    </section>
 
-      {/* Footer */}
-      <footer className="max-w-7xl mx-auto px-8 py-16 flex justify-between items-center border-t border-zinc-900 text-[8px] tracking-[0.5em] text-zinc-600">
+    <footer class="max-w-7xl mx-auto px-8 py-16 flex flex-col md:flex-row justify-between items-center border-t border-zinc-900 text-[8px] tracking-[0.5em] text-zinc-600 gap-4 text-center">
         <span>© 2026 AQUILA FINANCE GLOBAL INC.</span>
-        <div className="flex gap-8">
-          <span>TERMS</span>
-          <span>PRIVACY</span>
-          <span>ANTI-MONEY LAUNDERING</span>
+        <div class="flex gap-8">
+            <span>TERMS</span>
+            <span>PRIVACY</span>
+            <span>AML POLICY</span>
         </div>
-      </footer>
-    </div>
-  );
-};
+    </footer>
 
-export default AquilaLanding;
+</body>
+</html>
